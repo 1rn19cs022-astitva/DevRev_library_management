@@ -1,0 +1,640 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Library Books UI</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" charset="utf-8"></script>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" >
+		<link rel="stylesheet" href="style.css" >
+	</head>
+	<body class="is-preload">
+    <h1>Library</h1>
+      <div class="container">
+        <h2>Filter by: 
+          <div class="dropdown">
+              <select onclick="myFunction()" class="dropbtn">
+                <option>Select</option>
+                <option value="genre">Genre</option>
+                <option value="author">Author</option>
+                <option value="date">Date</option>
+            </select>
+          </div> 
+        </h2>
+
+        <div id="myBtnContainer">
+          <div class="genre box">
+            <button class="btn active" onclick="filterSelection('all')">All</button>
+            <button class="btn" onclick="filterSelection('adventure')">Adventure</button>
+            <button class="btn" onclick="filterSelection('scifi')">Scifi</button>
+            <button class="btn" onclick="filterSelection('horror')">Horror</button>
+            <button class="btn" onclick="filterSelection('action')">Action</button>
+            <button class="btn" onclick="filterSelection('science')">Science</button>
+            <button class="btn" onclick="filterSelection('programming')">Programming</button>
+            <button class="btn" onclick="filterSelection('biography')">Biography</button>
+          </div>
+          <div class="author box">
+            <button class="btn active" onclick="filterSelection('all')">All</button>
+            <button class="btn" onclick="filterSelection('bran')">Brandon Sanderson</button>
+            <button class="btn" onclick="filterSelection('grrm')">George RR Martin</button>
+            <button class="btn" onclick="filterSelection('king')">Stephen King</button>
+            <button class="btn" onclick="filterSelection('joe')">Joe Abercrombie</button>
+            <button class="btn" onclick="filterSelection('jrr')">JRR Tolkien</button>
+          </div>
+          <div class="date box">
+            <button class="btn active" onclick="filterSelection('all')">All</button>
+            <button class="btn" onclick="filterSelection('1')">Before 1990</button>
+            <button class="btn" onclick="filterSelection('2')">1990-2000</button>
+            <button class="btn" onclick="filterSelection('3')">2000-2010</button>
+            <button class="btn" onclick="filterSelection('4')">2010-2020</button>
+            <button class="btn" onclick="filterSelection('5')">After 2020</button>
+          </div>
+        </div>
+
+
+        <div class ="card-content">
+          <div class="card"> 
+            <div class="filterDiv adventure jrr 1">
+              <div class="card-image"><img src="images/adventure1.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Fiction</a></li>
+                    <li><a href="">Adventure</a></li>
+                  </ol>
+                  <h2 class="post-title">
+                    <a>The Hobbit</a>
+                  </h2>
+                </div> 
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv scifi horror action 2">
+              <div class="card-image"><img src="images/scifi8.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Sci-Fi</a></li>
+                    <li><a href="">Horror</a></li>
+                    <li><a href="">Action</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>Red Star</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv biography 3">
+              <div class="card-image"><img src="images/biography1.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Biography</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>Barack Obama</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv adventure scifi bran 4">
+              <div class="card-image"><img src="images/adventure2.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Sci-fi</a></li>
+                    <li><a href="">Adventure</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>Snapshot</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv horror fiction king 3">
+              <div class="card-image"><img src="images/horror1.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Horror</a></li>
+                    <li><a href="">Fiction</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>Doctor Sleep</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv programming 2">
+              <div class="card-image"><img src="images/prog1.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Programming</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>JAVA Programming</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv scifi adventure action 4">
+              <div class="card-image"><img src="images/scifi7.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Sci-Fi</a></li>
+                    <li><a href="">Adventure</a></li>
+                    <li><a href="">Action</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>Enceladus</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv biography 1">
+              <div class="card-image"><img src="images/biography2.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Biography</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>My Experiments with Truth</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv fiction adventure scifi bran 3">
+              <div class="card-image"><img src="images/fiction4.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Sci-fi</a></li>
+                    <li><a href="">Fiction</a></li>
+                    <li><a href="">Adventure</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>Starsight</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv biography science 2">
+              <div class="card-image"><img src="images/biography5.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Biography</a></li>
+                    <li><a href="">Science</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>Stephen Hawking</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv programming science 4">
+              <div class="card-image"><img src="images/prog4.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Programming</a></li>
+                    <li><a href="">Science</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>Machine Learning</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv fiction adventure action bran 5">
+              <div class="card-image"><img src="images/fiction1.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Fiction</a></li>
+                    <li><a href="">Adventure</a></li>
+                    <li><a href="">Action</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>Oathbringer</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv fiction scifi horror 2">
+              <div class="card-image"><img src="images/scifi6.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Fiction</a></li>
+                    <li><a href="">Sci-Fi</a></li>
+                    <li><a href="">Horror</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>The war of the worlds</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv horror action king 2">
+              <div class="card-image"><img src="images/horror2.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Horror</a></li>
+                    <li><a href="">Action</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>Bag of Bones</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv biography programming 3">
+              <div class="card-image"><img src="images/biography4.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Biography</a></li>
+                    <li><a href="">Programming</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>Steve Jobs</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv fiction action grrm 3">
+              <div class="card-image"><img src="images/fiction6.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Fiction</a></li>
+                    <li><a href="">Action</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>The Dance with Dragons</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv horror adventure king 3">
+              <div class="card-image"><img src="images/horror3.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Horror</a></li>
+                    <li><a href="">Adventure</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>The Bazaar of bad dreams</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv biography science 2">
+              <div class="card-image"><img src="images/biography3.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Biography</a></li>
+                    <li><a href="">Science</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>Wings of Fire</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv horror king 2">
+              <div class="card-image"><img src="images/horror4.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Horror</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>The Dark Tower</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv programming 2">
+              <div class="card-image"><img src="images/prog2.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Programming</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>Python</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv science 3">
+              <div class="card-image"><img src="images/science1.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Science</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>Earth Science</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv scifi 4">
+              <div class="card-image"><img src="images/scifi5.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Sci-Fi</a></li>
+                    <li><a href="">Action</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>The Hypocrite World</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv fiction adventure grrm 2">
+              <div class="card-image"><img src="images/fiction7.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Fiction</a></li>
+                    <li><a href="">Adventure</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>A Game of Thrones</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv fiction adventure grrm 3">
+              <div class="card-image"><img src="images/fiction8.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Fiction</a></li>
+                    <li><a href="">Adventure</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>Fire & Blood</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv fiction horror king 2">
+              <div class="card-image"><img src="images/horror5.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Fiction</a></li>
+                    <li><a href="">Horror</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>The Outsider</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv science 4">
+              <div class="card-image"><img src="images/science2.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Science</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>General Science</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv science programming 2">
+              <div class="card-image"><img src="images/prog3.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Science</a></li>
+                    <li><a href="">Programming</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>Computer Science</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv science 3">
+              <div class="card-image"><img src="images/science3.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Science</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>Physics</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv horror king 3">
+              <div class="card-image"><img src="images/horror6.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Horror</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>Revival</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv scifi adventure action 5">
+              <div class="card-image"><img src="images/scifi3.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Sci-Fi</a></li>
+                    <li><a href="">Adventure</a></li>
+                    <li><a href="">Action</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>Spearhead</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv adventure action jrr 1">
+              <div class="card-image"><img src="images/adventure5.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Adventure</a></li>
+                    <li><a href="">Action</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>The Return of the King</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv adventure action grrm 2">
+              <div class="card-image"><img src="images/fiction2.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Adventure</a></li>
+                    <li><a href="">Action</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>A Feast for Crows</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv adventure action bran 4">
+              <div class="card-image"><img src="images/fiction3.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Adventure</a></li>
+                    <li><a href="">Action</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>The Way of Kings</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv adventure action grrm 3">
+              <div class="card-image"><img src="images/fiction9.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Adventure</a></li>
+                    <li><a href="">Action</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>A Storm of Swords</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv adventure action grrm 3">
+              <div class="card-image"><img src="images/fiction10.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Adventure</a></li>
+                    <li><a href="">Action</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>A Feast for Crows</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv adventure action grrm 2">
+              <div class="card-image"><img src="images/fiction11.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Adventure</a></li>
+                    <li><a href="">Action</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>A Clash of Kings</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv adventure action  bran 5">
+              <div class="card-image"><img src="images/fiction12.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Sci-Fi</a></li>
+                    <li><a href="">Adventure</a></li>
+                    <li><a href="">Action</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>The Alloy of Law</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv adventure action bran 4">
+              <div class="card-image"><img src="images/fiction13.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Sci-Fi</a></li>
+                    <li><a href="">Adventure</a></li>
+                    <li><a href="">Action</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>Spearhead</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv adventure action horror joe 4">
+              <div class="card-image"><img src="images/fiction14.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Horror</a></li>
+                    <li><a href="">Adventure</a></li>
+                    <li><a href="">Action</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>Best Served Cold</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card">
+            <div class="filterDiv action joe 5">
+              <div class="card-image"><img src="images/fiction15.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Action</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>A Little Hatred</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv adventure action joe 5">
+              <div class="card-image"><img src="images/fiction16.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Adventure</a></li>
+                    <li><a href="">Action</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>The Wisdom of Crowds</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv adventure action joe 4">
+              <div class="card-image"><img src="images/fiction17.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Adventure</a></li>
+                    <li><a href="">Action</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>The Trouble with Peace</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+          <div class="card"> 
+            <div class="filterDiv adventure action joe 4">
+              <div class="card-image"><img src="images/fiction18.jpg" alt="">
+                <div class="card-info">
+                  <ol class="post-categories">
+                    <li><a href="">Adventure</a></li>
+                    <li><a href="">Action</a></li>
+                  </ol>
+                  <h2 class="post-title"><a>The Heroes</a></h2>
+                </div>
+              </div>
+            </div>  
+          </div>
+
+        </div>
+
+        <div class="pagination">
+          <li class="page-item previous-page"><a class="page-link" href="#">&lt</a></li>
+          <li class="page-item current active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item dots"><a class="page-link" href="#">...</a></li>
+          <li class="page-item current"><a class="page-link" href="#">5</a></li>
+          <li class="page-item current"><a class="page-link" href="#">6</a></li>
+          <li class="page-item dots"><a class="page-link" href="#">...</a></li>
+          <li class="page-item current"><a class="page-link" href="#">10</a></li>
+          <li class="page-item next-page"><a class="page-link" href="#">&gt</a></li>
+        </div>
+
+      </div>
+
+    <script src="script.js"></script>
+
+
+
+	</body>
+</html>
+
+
+
